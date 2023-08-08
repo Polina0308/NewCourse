@@ -1,5 +1,12 @@
 package spring_introduction;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+//@Component
+//@Scope("prototype")
 public class Dog implements  Pet{
 //    private  String name;
     public  Dog(){
@@ -10,13 +17,14 @@ public class Dog implements  Pet{
         System.out.println("Gav");
     }
 
-    public  void init(){
-        System.out.println("Class dog. Init method");
-    }
-
-    public void destroy(){
-        System.out.println("Class dog. Destroy method");
-    }
+//    @PostConstruct
+//    public  void init(){
+//        System.out.println("Class dog. Init method");
+//    }
+//    @PreDestroy
+//    public void destroy(){
+//        System.out.println("Class dog. Destroy method");
+//    }
 
 //    public String getName() {
 //        return name;

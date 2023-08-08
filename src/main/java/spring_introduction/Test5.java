@@ -11,7 +11,7 @@ public class Test5 {
         Dog yourDog = context.getBean("myPet", Dog.class);
         yourDog.Say();
         context.close();
-        myDog.destroy();
-        yourDog.destroy();
+//        myDog.destroy();
+//        yourDog.destroy();
     }
 }
