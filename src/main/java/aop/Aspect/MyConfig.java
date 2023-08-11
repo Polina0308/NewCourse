@@ -1,4 +1,4 @@
-package aop;
+package aop.Aspect;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

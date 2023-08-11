@@ -1,4 +1,4 @@
-package aop;
+package aop.Aspect;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -8,14 +8,15 @@ public class Test1 {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         UnivLibrary univlibrary = context.getBean("univLibrary", UnivLibrary.class);
+        Book book = context.getBean("book", Book.class);
 
-//        Book book = context.getBean("book", Book.class);
         univlibrary.getBook();
+        univlibrary.addBook("Zaur", book);
+        univlibrary.addMagazine();
+
+
 //        univlibrary.ReturnMagazine();
 //        univlibrary.addBook();
-        univlibrary.getMagazine();
-
-
 //        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
 //        schoolLibrary.getBook();
 

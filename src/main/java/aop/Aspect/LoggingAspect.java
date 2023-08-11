@@ -1,6 +1,8 @@
 package aop.Aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.aspectj.lang.annotation.Aspect;
@@ -10,10 +12,10 @@ import org.aspectj.lang.annotation.Aspect;
 public class LoggingAspect {
 
 
-//    @Pointcut("execution(* aop.UnivLibrary.*(..))")
+//    @Pointcut("execution(* aop.Aspect.UnivLibrary.*(..))")
 //    private void allMethodFromUnivLibrary(){}
 //
-//    @Pointcut("execution(public void aop.UnivLibrary.ReturnMagazine())")
+//    @Pointcut("execution(public void aop.Aspect.UnivLibrary.ReturnMagazine())")
 //    private  void returnMagazineFrmUnivLibrary(){}
 //
 //    @Pointcut("allMethodFromUnivLibrary() && !returnMagazineFrmUnivLibrary()")
@@ -29,10 +31,10 @@ public class LoggingAspect {
 
 
 
-//@Pointcut("execution(* aop.UnivLibrary.get*())")
+//@Pointcut("execution(* aop.Aspect.UnivLibrary.get*())")
 //    private  void allGetsMethodFromUnivLibrary(){}
 //
-//    @Pointcut("execution(* aop.UnivLibrary.Return*())")
+//    @Pointcut("execution(* aop.Aspect.UnivLibrary.Return*())")
 //    private  void allReturnMethodFromUnivLibrary(){}
 //
 //    @Pointcut("allGetsMethodFromUnivLibrary() || allReturnMethodFromUnivLibrary()")
@@ -53,10 +55,35 @@ public class LoggingAspect {
 //}
 
 
-        @Before("aop.Aspect.MyPointcuts.allGetMethod()")
-    public  void beforeGetLoggingAdvice(){
-        System.out.println("beforeGetLoggingAdvice: логирование попытки получить книгу/журнал");
-    }
+        @Before("aop.Aspect.MyPointcuts.allAddMethod()")
+    public  void beforeAddLoggingAdvice(JoinPoint joinPoint){
+            MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+            System.out.println("methodSignature = " + methodSignature);
+            System.out.println("methodSignature.getMethod() = " + methodSignature.getMethod());
+            System.out.println("methodSignature.getReturnType() = " + methodSignature.getReturnType());
+            System.out.println("methodSignature.getName() = " + methodSignature.getName());
+
+            if (methodSignature.getName().equals("addBook")){
+                Object [] arguments = joinPoint.getArgs();
+                for(Object object:arguments){
+                    if(object instanceof Book){
+                        Book myBook = (Book) object;
+                        System.out.println("Информация о книге "+
+                                myBook.getName() + " , автор "
+                        + myBook.getAutor() + " , год издания "
+                        + myBook.getYearOfPublication());
+                    }
+                    else if(object instanceof String){
+                        System.out.println("Книгу добавляет " + object);
+                    }
+                }
+            }
+
+            System.out.println("beforeGetLoggingAdvice: логирование попытки получить книгу/журнал");
+            System.out.println("-----------------------------");
+
+
+        }
 
 
 }
