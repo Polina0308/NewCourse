@@ -1,4 +1,4 @@
-package aop.Aspect;
+package aop;
 
 import org.springframework.stereotype.Component;
 

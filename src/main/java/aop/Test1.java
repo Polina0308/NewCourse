@@ -1,5 +1,6 @@
-package aop.Aspect;
+package aop;
 
+import aop.Aspect.MyConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Test1 {
