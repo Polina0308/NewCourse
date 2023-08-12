@@ -1,5 +1,6 @@
 package aop.Aspect;
 
+import aop.Book;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -12,10 +13,10 @@ import org.aspectj.lang.annotation.Aspect;
 public class LoggingAspect {
 
 
-//    @Pointcut("execution(* aop.Aspect.UnivLibrary.*(..))")
+//    @Pointcut("execution(* aop.UnivLibrary.*(..))")
 //    private void allMethodFromUnivLibrary(){}
 //
-//    @Pointcut("execution(public void aop.Aspect.UnivLibrary.ReturnMagazine())")
+//    @Pointcut("execution(public void aop.UnivLibrary.ReturnMagazine())")
 //    private  void returnMagazineFrmUnivLibrary(){}
 //
 //    @Pointcut("allMethodFromUnivLibrary() && !returnMagazineFrmUnivLibrary()")
@@ -31,10 +32,10 @@ public class LoggingAspect {
 
 
 
-//@Pointcut("execution(* aop.Aspect.UnivLibrary.get*())")
+//@Pointcut("execution(* aop.UnivLibrary.get*())")
 //    private  void allGetsMethodFromUnivLibrary(){}
 //
-//    @Pointcut("execution(* aop.Aspect.UnivLibrary.Return*())")
+//    @Pointcut("execution(* aop.UnivLibrary.Return*())")
 //    private  void allReturnMethodFromUnivLibrary(){}
 //
 //    @Pointcut("allGetsMethodFromUnivLibrary() || allReturnMethodFromUnivLibrary()")
