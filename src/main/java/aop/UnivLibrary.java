@@ -10,6 +10,7 @@ public class UnivLibrary extends  AbstractLibrary{
     }
 
     public String ReturnBook(){
+        int a = 10/0;
         System.out.println("Мы возвращаем книгу в UnivLibrary");
         return " Война и мир";
 
