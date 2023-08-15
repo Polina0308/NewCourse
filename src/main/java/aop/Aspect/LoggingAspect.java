@@ -1,16 +1,16 @@
 package aop.Aspect;
 
-import aop.Book;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
-import org.aspectj.lang.annotation.Aspect;
-@Component
-@Aspect
-@Order(1)
-public class LoggingAspect {
+//import aop.Book;
+//import org.aspectj.lang.JoinPoint;
+//import org.aspectj.lang.annotation.Before;
+//import org.aspectj.lang.reflect.MethodSignature;
+//import org.springframework.core.annotation.Order;
+//import org.springframework.stereotype.Component;
+//import org.aspectj.lang.annotation.Aspect;
+//@Component
+//@Aspect
+//@Order(1)
+//public class LoggingAspect {
 
 
 //    @Pointcut("execution(* aop.UnivLibrary.*(..))")
@@ -87,4 +87,3 @@ public class LoggingAspect {
 //        }
 
 
-}

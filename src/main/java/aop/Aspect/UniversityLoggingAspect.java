@@ -1,13 +1,13 @@
 package aop.Aspect;
 
-import org.aspectj.lang.annotation.*;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
-
-@Component
-@Aspect
-public class UniversityLoggingAspect {
+//import org.aspectj.lang.annotation.*;
+//import org.springframework.stereotype.Component;
+//
+//import java.util.List;
+//
+//@Component
+//@Aspect
+//public class UniversityLoggingAspect {
 //    @Before("execution(* getStudents())")
 //    public  void beforeStudentsLoggingAdvice(){
 //        System.out.println("beforeStudentsLoggingAdvice: логируем получение списка студентов перед методом getStudents");
@@ -33,8 +33,8 @@ public class UniversityLoggingAspect {
 //        System.out.println("afterThrowingStudentsLoggingAdvice: логируем исключение " + exception);
 //    }
 
-    @After("execution(* getStudents())")
-    public void afterStudentsLoggingAdvice(){
-        System.out.println("afterStudentsLoggingAdvice: логируем нормальную работу метода или исключение");
-    }
-    }
+//    @After("execution(* getStudents())")
+//    public void afterStudentsLoggingAdvice(){
+//        System.out.println("afterStudentsLoggingAdvice: логируем нормальную работу метода или исключение");
+//    }
+//    }
