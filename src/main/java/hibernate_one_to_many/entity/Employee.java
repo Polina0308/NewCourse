@@ -1,6 +1,5 @@
-package one_to_many.entity;
+package hibernate_one_to_many.entity;
 
-import hibernate_one_to_one.Entity.Detail;
 import jakarta.persistence.*;
 
 @Entity

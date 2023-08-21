@@ -1,5 +1,7 @@
-package one_to_many.entity;
+package hibernate_one_to_many.entity.one_to_many_uni;
 
+import hibernate_one_to_many.entity.one_to_many_uni.entity.Department;
+import hibernate_one_to_many.entity.one_to_many_uni.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,22 +14,20 @@ public class Test1 {
                 .addAnnotatedClass(Department.class)
                 .buildSessionFactory()){
             Session session = factory.getCurrentSession();
-            session.beginTransaction();
-//            Department department = new Department("IT", 300,1200);
-//            Employee employee1 = new Employee("Polina", "Davydenko", 190);
-//            Employee employee2 = new Employee("Yana", "Davydenko", 900);
+//            Department department = new Department("HR", 500, 1500);
+//            Employee employee1 = new Employee("Oleg", "Ivanov", 800);
+//            Employee employee2 = new Employee("Andrey", "Petrov", 1000);
 //
 //            department.addEmployeeToDep(employee1);
 //            department.addEmployeeToDep(employee2);
-
 //            session.persist(department);
 
-//            Department department = session.get(Department.class, 1);
-//            System.out.println(department);
-//            System.out.println(department.getEmployees());
+            session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
-           session.remove(employee);
+            Department department = session.get(Department.class, 2);
+            System.out.println(department);
+            System.out.println(department.getEmployees());
+
 
             session.getTransaction().commit();
         }

@@ -1,4 +1,4 @@
-package one_to_many_uni.entity;
+package hibernate_one_to_many.entity.one_to_many_uni.entity;
 
 import jakarta.persistence.*;
 
