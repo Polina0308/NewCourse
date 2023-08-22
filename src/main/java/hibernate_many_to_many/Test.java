@@ -37,14 +37,13 @@ public class Test {
 //            child1.addChildToSection(section1);
 //            child1.addChildToSection(section2);
 //            child1.addChildToSection(section3);
+            //********************************************************
+
 
             session.beginTransaction();
 
-            Section section = session.get(Section.class, 1);
-            System.out.println(section);
-            System.out.println(section.getChildren());
-
-
+            Child child = session.get(Child.class, 1);
+            session.remove(child);
 
 
             session.getTransaction().commit();
